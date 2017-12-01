@@ -1,0 +1,14 @@
+sudo: required
+
+language: python
+
+install: true
+
+env:
+  - COMMIT=${TRAVIS_COMMIT::8}
+services:
+  - docker
+
+before_install:
+  ## Docker Build
+  docker login -u '$DOCKER_USER' -p '$DOCKER_PASS';
